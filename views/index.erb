@@ -1,9 +1,17 @@
-<h1>Find out your Scrabble score!</h1>
-<form action="/score">
+<h1>Find and Replace</h1>
+<form action="/result">
   <div class="form-group">
-     <label for="score">Enter letter or word!
+     <label for="string">Enter sentence!
 </label>
-     <input id="score" name="score" class="form-control" type="text">
+     <input id="string" name="string" class="form-control" type="text">
+
+     <label for="find">Enter a word to find!
+</label>
+     <input id="find" name="find" class="form-control" type="text">
+
+     <label for="replace">Enter a word to replace!
+</label>
+     <input id="replace" name="replace" class="form-control" type="text">
   </div>
-  <button type="submit" class="btn-success">Calculate</button>
+  <button type="submit" class="btn-success">Get New String</button>
 </form>

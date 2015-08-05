@@ -3,11 +3,13 @@ require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe('scrabble_score', {:type => :feature}) do
-  it('processes the user entry and returns calculated scrabble score') do
+describe('find_and_replace', {:type => :feature}) do
+  it('processes the user entry and return new sentence') do
     visit('/')
-    fill_in('score', :with => 'word')
-    click_button('Calculate')
-    expect(page).to have_content('Green Eggs and Ham')
+    fill_in('string', :with => 'I am walking my cat to the cathedral')
+    fill_in('find', :with => 'cat')
+    fill_in('replace', :with => 'dog')
+    click_button('Get New String')
+    expect(page).to have_content('I am walking my dog to the doghedral')
   end
 end
